@@ -6,20 +6,23 @@ import NoImage from '../images/no_image.jpg';
 import HeroImage from './HeroImage';
 import Grid from './Grid';
 import Thumbnail from './Thumbnail';
+import Spinner from './Spinner';
+import SearchBar from './SearchBar';
 
 const Home = () => {
-  const { movies, loading, error, errorMessage } = useHomeFetch();
+  const { movies, loading, error, errorMessage, searchTerm, setSearchTerm } = useHomeFetch();
   console.log(movies);
   return (
     <>
-      {movies.results[0] ?
+      {!searchTerm && movies.results[0] ?
         <HeroImage
             image={`${IMAGE_BASE_URL}${BACKDROP_SIZE}${movies.results[0].backdrop_path}`}
             title={movies.results[0].original_title}
             text={movies.results[0].overview}
         />
       : null }
-      <Grid header='Popular Movies'>
+      <SearchBar setSearchTerm={setSearchTerm} />
+      <Grid header={searchTerm ? 'Search Results' : 'Popular Movies'}>
         {movies.results.map(movie => (
           <Thumbnail
               key={movie.id}
@@ -33,6 +36,7 @@ const Home = () => {
           />
         ))}
       </Grid>
+      <Spinner />
     </>
   );
 };

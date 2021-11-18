@@ -9,6 +9,7 @@ const initialState = {
 };
 
 export const useHomeFetch = () => {
+  const [searchTerm, setSearchTerm] = useState("");
   const [movies, setMovies] = useState(initialState);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
@@ -33,9 +34,11 @@ export const useHomeFetch = () => {
     setLoading(false);
   };
 
+  // initial and search
   useEffect(() => {
-    fetchMovies(1);
-  }, []);
+    setMovies(initialState);
+    fetchMovies(1, searchTerm);
+  }, [searchTerm]);
 
-  return { movies, loading, error, errorMessage };
+  return { movies, loading, error, errorMessage, searchTerm, setSearchTerm };
 };
