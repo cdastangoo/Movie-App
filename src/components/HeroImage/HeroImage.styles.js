@@ -11,9 +11,9 @@ export const Wrapper = styled.div`
   background-position: center;
   height: 600px;
   position: relative;
-  animation: heroFadeIn 1s;
+  animation: fadeIn 1s;
   
-  @keyframes heroFadeIn {
+  @keyframes fadeIn {
     from {
       opacity: 0;
     }

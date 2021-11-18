@@ -4,6 +4,8 @@ import { POSTER_SIZE, BACKDROP_SIZE, IMAGE_BASE_URL } from '../config';
 import NoImage from '../images/no_image.jpg';
 
 import HeroImage from './HeroImage';
+import Grid from './Grid';
+import Thumbnail from './Thumbnail';
 
 const Home = () => {
   const { movies, loading, error, errorMessage } = useHomeFetch();
@@ -16,8 +18,21 @@ const Home = () => {
             title={movies.results[0].original_title}
             text={movies.results[0].overview}
         />
-      : null
-      }
+      : null }
+      <Grid header='Popular Movies'>
+        {movies.results.map(movie => (
+          <Thumbnail
+              key={movie.id}
+              clickable
+              image={
+                movie.poster_path
+                  ? IMAGE_BASE_URL + POSTER_SIZE + movie.poster_path
+                  : NoImage
+              }
+              movieId={movie.id}
+          />
+        ))}
+      </Grid>
     </>
   );
 };
