@@ -28,7 +28,7 @@ const Home = () => {
     <>
       {!searchTerm && movies.results[0] ?
         <HeroImage
-            image={`${IMAGE_BASE_URL}${BACKDROP_SIZE}${movies.results[0].backdrop_path}`}
+            image={IMAGE_BASE_URL + BACKDROP_SIZE + movies.results[0].backdrop_path}
             title={movies.results[0].original_title}
             text={movies.results[0].overview}
         />
