@@ -1,17 +1,17 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Wrapper, Content, LogoImg, TMDBLogoImg } from './Header.styles';
-
-import Logo from '../../images/react-movie-logo.svg';
-import TMDBLogo from '../../images/tmdb_logo.svg';
+import { Wrapper, Content, Text, LogoImg } from './Header.styles';
+import Logo from '../../images/tmdb_logo.svg';
 
 const Header = () => (
   <Wrapper>
     <Content>
-      <Link to='/'>
-        <LogoImg src={Logo} alt='logo' />
+      <Link to='/' className="text-link">
+        <Text>
+          <h1>React Movie DB</h1>
+        </Text>
       </Link>
-      <TMDBLogoImg src={TMDBLogo} alt='tmdb-logo' />
+      <LogoImg src={Logo} alt='tmdb-logo' />
     </Content>
   </Wrapper>
 );

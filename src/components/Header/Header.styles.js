@@ -10,18 +10,22 @@ export const Content = styled.div`
   align-items: center;
   justify-content: space-between;
   max-width: var(--maxWidth);
-  padding: 20px 0;
   margin: 0 auto;
-`;
-
-export const LogoImg = styled.img`
-  width: 180px;
-  @media (max-width: 500px) {
-    width: 150px;
+  .text-link {
+    text-decoration: inherit;
   }
 `;
 
-export const TMDBLogoImg = styled.img`
+export const Text = styled.div`
+  h1 {
+    font-size: var(--fontXL);
+    @media (max-width: 768px) {
+      font-size: var(--fontLarge);
+    }
+  }
+`;
+
+export const LogoImg = styled.img`
   width: 120px;
   @media (max-width: 500px) {
     width: 80px;

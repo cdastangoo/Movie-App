@@ -15,6 +15,9 @@ export const Content = styled.div`
   width: 100%;
   max-width: var(--maxWidth);
   padding: 0 20px;
+  .text-link {
+    text-decoration: inherit;
+  }
   
   span {
     padding-right: 10px;

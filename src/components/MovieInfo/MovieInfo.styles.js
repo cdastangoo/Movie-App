@@ -63,6 +63,10 @@ export const Text = styled.div`
     }
   }
   
+  .genres {
+    padding-top: 10px;
+  }
+  
   h1 {
     @media (max-width: 768px) {
       font-size: var(--fontLarge);

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useHomeFetch } from '../hooks/useHomeFetch';
 import { POSTER_SIZE, BACKDROP_SIZE, IMAGE_BASE_URL } from '../config';
 import NoImage from '../images/no_image.jpg';
@@ -11,6 +11,10 @@ import SearchBar from './SearchBar';
 import Button from './Button';
 
 const Home = () => {
+  useEffect(() => {
+    document.title = "React Movie DB";
+  }, []);
+
   const {
     movies,
     loading,
@@ -20,7 +24,6 @@ const Home = () => {
     setSearchTerm,
     setIsLoadingMore
   } = useHomeFetch();
-  console.log(movies);
 
   if (error) return <div>{errorMessage}</div>;
 
