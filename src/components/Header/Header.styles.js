@@ -15,7 +15,7 @@ export const Content = styled.div`
 `;
 
 export const LogoImg = styled.img`
-  width: 200px;
+  width: 180px;
   @media (max-width: 500px) {
     width: 150px;
   }

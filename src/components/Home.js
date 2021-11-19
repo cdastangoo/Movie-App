@@ -27,11 +27,11 @@ const Home = () => {
   return (
     <>
       {!searchTerm && movies.results[0] ?
-          <HeroImage
-              image={`${IMAGE_BASE_URL}${BACKDROP_SIZE}${movies.results[0].backdrop_path}`}
-              title={movies.results[0].original_title}
-              text={movies.results[0].overview}
-          />
+        <HeroImage
+            image={`${IMAGE_BASE_URL}${BACKDROP_SIZE}${movies.results[0].backdrop_path}`}
+            title={movies.results[0].original_title}
+            text={movies.results[0].overview}
+        />
       : null }
       <SearchBar setSearchTerm={setSearchTerm} />
       <Grid header={searchTerm ? 'Search Results' : 'Popular Movies'}>
