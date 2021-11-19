@@ -10,7 +10,6 @@ export const Wrapper = styled.div`
   background-size: 100%, cover;
   //background-position: center;
   height: 600px;
-  //height: 880px;
   position: relative;
   animation: fadeIn 1s;
   @media (max-width: 768px) {

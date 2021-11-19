@@ -9,6 +9,7 @@ import Grid from './Grid';
 import Spinner from './Spinner';
 import MovieInfo from './MovieInfo';
 import MovieInfoBar from './MovieInfoBar';
+import Actor from './Actor';
 
 const Movie = () => {
   const { movieId } = useParams();
@@ -26,6 +27,19 @@ const Movie = () => {
           budget={movie.budget}
           revenue={movie.revenue}
       />
+      <Grid header='Actors'>
+        {movie.actors.map(actor => (
+          <Actor
+              key={actor.credit_id}
+              name={actor.name}
+              character={actor.character}
+              imageUrl={actor.profile_path
+                  ? IMAGE_BASE_URL + POSTER_SIZE + actor.profile_path
+                  : NoImage
+              }
+          />
+        ))}
+      </Grid>
     </>
   );
 };
